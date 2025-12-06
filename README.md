@@ -2,9 +2,9 @@
 
 ## 📌 Project Overview
 
-Günümüzde işitme ve konuşma engelli bireyler iletişim kurma noktasında önemli zorluklarla karşılaşmaktadır. Bu bireyler, işaret dili bilmeyen kişilerle iletişim kuramadıkları için sosyal, eğitimsel ve mesleki alanlarda çeşitli engeller yaşamaktadır. Teknolojinin sunduğu imkânlar sayesinde bu engellerin büyük kısmı aşılabilir hâle gelmiştir.
+Today, individuals with hearing and speech impairments face significant challenges in communication. Since they are unable to interact effectively with people who do not understand sign language, they often encounter obstacles in social, educational, and professional environments. However, with the advancements in technology, many of these barriers can now be mitigated.
 
-Bu proje, yalnızca teknik bir uygulama olmaktan öte, işitme ve konuşma engelli bireylerin sosyal hayata aktif katılımını artırmayı hedefleyen toplumsal bir çözüm sunmaktadır. Kamera üzerinden yapılan işaret dili hareketlerini algılayarak bunları metne dönüştüren sistem, işaret dili bilmeyen kişilerle iletişimi kolaylaştırmayı amaçlamaktadır. Bu çalışma, ilgili soruna çözüm niteliğinde bir başlangıç olarak değerlendirilebilir.
+This project provides not only a technical solution but also a social contribution aimed at enhancing the active participation of hearing- and speech-impaired individuals in daily life. By detecting sign language gestures through a camera and converting them into text, the system aims to facilitate communication with people who do not know sign language. This work can be seen as an initial step toward addressing the communication barriers faced by these individuals.
 
 ---
 
@@ -26,7 +26,7 @@ Bu proje, yalnızca teknik bir uygulama olmaktan öte, işitme ve konuşma engel
 
 ✔️ A dataset of 12,591 images covering 48 different sign classes
 
-✔️ Custom-created dataset
+✔️ Fully custom-created dataset
 
 ✔️ TensorFlow/Keras-based model
 
@@ -59,46 +59,46 @@ pip install -r requirements.txt
 
 ## 📱 How It Works
 
-- Projeyi başlatınız 
-- Kamera karşısına geçiniz(hem işaret dili ifadesini yapacak kişi hem de algılayacak kişi)
-- İşaret dili ifadesini kameraya yapınız
-- İşaret dili ifadesinin anlamı metinsel olarak ekrana yazdırılır, ikinci kişi olur ve iletişim sağlanır
+- Start the project 
+- Position yourself in front of the camera (both the person performing the sign and the person viewing the output)
+- Perform the sign language gesture toward the camera
+- The meaning of the gesture will be displayed on the screen as text, enabling communication between both individuals
 
 ---
 
 ## 🛠️ Technologies Used
 
-- Python: Projenin tamamı Python programlama dili ile geliştirilmiştir. Açık kaynak olması, geniş kütüphane desteği ve yapay zeka alanında yaygın olarak kullanılmasından dolayı tercih edilmiştir.
+- Python: The entire project is developed in Python due to its open-source nature, extensive library support, and its widespread use in the field of artificial intelligence.
 
-- OpenCV: Gerçek zamanlı görüntü işleme görevleri için kullanılmıştır. Kamera görüntülerinin işlenmesi, çerçeve oluşturma, el hareketlerinin algılanması ve modele uygun giriş hazırlanması işlemleri OpenCV ile gerçekleştirilmiştir.
+- OpenCV: Used for real-time image processing tasks such as handling camera input, frame processing, hand gesture extraction, and preparing data for the model.
 
-- TensorFlow & Keras: Modelin çalıştırılmasında TensorFlow altyapısı ve Keras arabirimi kullanılmıştır. Projede kullanılan model .h5 formatındadır ve Keras ile tam uyumludur.
+- TensorFlow & Keras: Employed to run the machine learning model. The project uses an .h5 model file fully compatible with Keras.
 
-- NumPy: Verilerin matematiksel olarak işlenmesi, çok boyutlu diziler ile çalışma ve model girişlerinin hazırlanması gibi işlemler için NumPy kullanılmıştır.
+- NumPy: Utilized for mathematical operations, working with multi-dimensional arrays, and preparing input data for the model.
 
 ---
 
 ## 🖼️ Dataset Creation
 
-Bu projede hazır bir veri seti kullanılmamış, tüm görseller tarafımca üretilmiştir. Bu yaklaşım, projenin özgünlüğünü artırmak ve modelin gerçek hayata daha iyi uyum sağlamasını sağlamak amacıyla tercih edilmiştir.
+A ready-made dataset was not used in this project; all images were created manually by me. This approach was chosen to enhance originality and improve real-world adaptability.
 
-Veri oluşturma sürecinde Türk İşaret Dili Sözlüğü temel kaynak olarak alınmıştır. Harfler ve en çok kullanılan ifadeler için kamera karşısında farklı açılar ve ışık koşullarında çok sayıda görüntü çekilmiştir. Böylece modelin farklı kullanıcılar ve çevresel koşullara dayanıklı olması hedeflenmiştir.
+The Turkish Sign Language Dictionary served as the primary reference during dataset creation. Numerous images were captured in front of a camera under different angles and lighting conditions for letters and commonly used expressions. This ensured greater robustness against variations in users and environments.
 
-Toplamda 48 sınıf oluşturulmuştur:
+In total, 48 classes were created:
 
-- 22 işaret dili harfi
+- 22 sign language letters
 
-- 24 sık kullanılan ifade
+- 24 commonly used expressions
 
-- Toplam üretilen veri:12.591 adet görüntü (tamamen manuel olarak oluşturulmuş)
+- Total dataset size: 12,591 manually created images
 
 ---
 
 ## ⚖️ Data Balance
 
-Her sınıfa ait görsel sayısının dengeli tutulmasına özen gösterilmiştir. Bu, modelin belirli sınıflara karşı taraflı (bias) davranmasını engellemiş ve tahmin doğruluğunu artırmıştır.
+Care was taken to keep the number of images per class balanced. This prevented the model from becoming biased toward specific classes and significantly improved prediction accuracy.
 
-Sınıflar arası dengesizlik olmadığında modelin daha kararlı, stabil ve yüksek doğruluk oranlarıyla çalıştığı gözlemlenmiştir.
+It was observed that the model performed more stably and consistently when class imbalance was minimized.
 
 ---
 
